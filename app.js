@@ -8,18 +8,22 @@ const app = new Vue({
         zipCode: 65738,
         apiParam: "imperial",
         imp: "° f",
+        met: "° c",
         wthrs:[
-            {temp:"66", curConditions:"Partly Cloudy", curcity:"Republic"}
-        ]
+            {temp:"66", curConditions:"Partly Cloudy", curCity:"Republic"}
+        ],
+        conds:[]
     },
     methods:{
         curWeather() {
             apiString = "https://api.openweathermap.org/data/2.5/weather?zip=65738,us&units="+ this.apiParam + "&appid=6df605a29ea5d833a7dbfa5767e8d5b0"
             axios.get(apiString)
             .then(function (e){
-                console.log(e.data.main) //to see my results in the console for reference
-                app.wthrs = e.data.main
+                console.log(e.data.weather[0].description) //to see my results in the console for reference
                 
+                app.wthrs = e.data.main
+                app.curCity = e.data.name
+
             })
         }
 

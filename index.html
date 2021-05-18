@@ -15,12 +15,15 @@
 <body>
     <div id="app">
         <div v-if="apiParam==='imperial'">
-        <h1>City:</h1>
+        <h1>City:{{curCity}}</h1>
         <h2>Temperature: {{wthrs.temp}} {{imp}} </h2>
+        <h2>High/low: {{wthrs.temp_max}}/{{wthrs.temp_min}}</h2>
         <h3>Conditions:</h3>
     </div>
     <div v-else>
-        <h1>Hello Nurse</h1>
+        <h1>City:</h1>
+        <h2>Temperature: {{wthrs.temp}} {{met}} </h2>
+        <h3>Conditions:</h3>
 
     </div>
         <button @click=curWeather>Click Me</button>
