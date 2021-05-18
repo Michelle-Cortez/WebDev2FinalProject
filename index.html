@@ -14,14 +14,18 @@
 </head>
 <body>
     <div id="app">
-        
-        <h1>City:{{weather[0].curcity}}</h1>
-        <h2>Temp:{{ weather[0].curTemp }}</h2>
-        <h3>Conditions: {{ weather[0].curConditions }}</h3>
+        <div v-if="apiParam==='imperial'">
+        <h1>City:</h1>
+        <h2>Temperature: {{wthrs.temp}} {{imp}} </h2>
+        <h3>Conditions:</h3>
+    </div>
+    <div v-else>
+        <h1>Hello Nurse</h1>
 
+    </div>
         <button @click=curWeather>Click Me</button>
     </div>
-  
+    
     <script src="app.js"></script>
 </body>
 </html>
