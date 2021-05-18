@@ -1,0 +1,11 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "Webpage. Enter zip and choose between c and f to get weather conditions, temp and city returned.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MNC",
+  "license": "ISC"
+}
