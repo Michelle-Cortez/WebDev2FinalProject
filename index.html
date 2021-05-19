@@ -22,9 +22,11 @@
 
         <!-- <input type="text" v-model=zipCode> -->
         <br>
-        <div class="container" style="width: fit-content;">
+
+        <!-- This is for the user to enter a zip code and choose between metric or imperial. It uses v-model to bind the answer into appropriate parameters in the Vue to use for api call. Button click will call on a validation function for zip code which will then call on the api if all is well or prompt for a proper zip code -->
+        <div class="container" style="width: 20vh;">
             <br>
-            <input type="text" class="form-control" v-model=zipCode style="width: 15vh;">
+            <input type="text" class="form-control" id=" " v-model=zipCode style="width: 15vh;">
             <div class="form-group">
                 <label for="sel1">Select list:</label>
                 <select class="form-control" id="sel1" v-model=apiParam style="width: 15vh;">
@@ -35,7 +37,7 @@
                 <br>
               </div> 
         
-            <button @click=curWeather>Get the Weather</button>
+            <button @click=valZip>Get the Weather</button>
             <hr>
         </div>
 

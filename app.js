@@ -5,7 +5,7 @@ const app = new Vue({
         temp: "",
         curConditions: "",
         curCity: "",
-        zipCode: 65738,
+        zipCode: "",
         apiParam: "imperial",
         imp: "° f",
         met: "° c",
@@ -16,6 +16,20 @@ const app = new Vue({
         conds:[]
     },
     methods:{
+        valZip () {
+            zips = this.zipCode
+            console.log(zips.length)
+            valRegEx = /^[^\W_]$|\d{5}/gm;
+            validZip = valRegEx.test(zips);
+            if (validZip == true && zips.length == 5){
+                this.curWeather()
+            } else {
+               alert(" Please enter a valid 5 digit zip code.  Numeric only. If your zip code is less than 3 digits, use 0 before the zip to get 5 digits. e.g. for '501'  use '00501' ")
+            }
+            
+           
+            
+        },
         curWeather() {
             apiString = "https://api.openweathermap.org/data/2.5/weather?zip="+ this.zipCode +",us&units="+ this.apiParam + "&appid=6df605a29ea5d833a7dbfa5767e8d5b0"
             axios.get(apiString)
